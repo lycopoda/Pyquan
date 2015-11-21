@@ -244,9 +244,11 @@ class CDF(object):
             except ValueError:
                 print 'Error in reading mass ({0}),\
                        check mass list in library'.format(mass)
-            i = mass_slice.index(m)
-            if i:
+            try:
+                i = mass_slice.index(m)
                 intensity += intensity_slice[i] 
+            except ValueError:
+                pass
             return intensity
 
     def get_total_TIC(self):
