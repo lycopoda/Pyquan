@@ -18,6 +18,7 @@ class Project(object):
         self._info = init.Info(init_file)
         self._path = init.Path(project_name, self._info)
 	self._csv = self._info.csv
+	self._read_csv = self._info.csv.read_csv
 	self._CFdict = {}
 
     @property
@@ -66,8 +67,8 @@ class Project(object):
     def get_CF_dict(self):
         with open(self._path.runlist_file, 'r') as runlistfile:
             for line in runlistfile:
-                sample, rc, ic = line.strip().split(',')
-                self._CFdict[sample.lower()] = (float(rc), float(ic))
+                sample, rc, ic = self._read_csv(line)
+		self._CFdict[sample.lower()] = (float(rc), float(ic))
         return 
 
     @property

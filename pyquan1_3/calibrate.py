@@ -80,6 +80,7 @@ class Library(object):
     
     def write_lib(self):
         code_list = []
+	make_line =self._info.csv.make_line
         for code in self._code_set:
             if not code in self._library:
                 print '{0} not in reference library'.format(code)
@@ -89,14 +90,15 @@ class Library(object):
 	code_list = sorted(code_list, key=lambda x: x[1])
 	code_list = [i[0] for i in code_list]
         with open(self._path.library_file, 'w') as lib:
-            lib.write('Code,RT,Limit,Mass,Name,Source\n')            
+	    lib.write(make_line(["Code","RT","Limit","Mass","Name","Source"]))
 	    for code in code_list:
 	        i = self._library[code]
-                i['lim'] = float(i['lim'])/5
-		mass = "+".join(i['mass'])
-                line = '{0},{1},{2},{3},"{4}",{5}\n'.format(code,
-                       i['RT'],i['lim'],mass,i['name'],i['source'])
-                lib.write(line)
+		info =[code,i['RT'],i['lim']/5,"+".join(i['mass']),i['name'],i['source']]
+		lib.write(make_line(info))
+#               i['lim'] = float(i['lim'])/5
+#		mass = "+".join(i['mass'])
+#		line =make_line([code,i['RT'],i['lim'],mass,i['name'],i['source']])
+#                lib.write(line)
         return
   
 #---End of Class Library----------------------------------------------
@@ -240,33 +242,39 @@ class WriteData(object):
 	self._file_name = project.path.align_data_file(item)
 	self._dict = data_dict
 	self._codelist = sorted(get_code_set(data_dict))
+	self._write_line =project.info.csv.make_line
 	self._sep = project.info.csv.sep
 
     def save_file(self):
 	with open(self._file_name, 'w') as datafile:
 	    datafile.write(self.header())
 	    for sample in self._dict:
-		datafile.write('{0}{1}'.format(sample, self._sep))
+#		datafile.write('{0}{1}'.format(sample, self._sep))
 	        datafile.write(self.line(sample))
 	return
 
     def header(self):
-	header = 'Sample{0}'.format(self._sep)
-	for code in self._codelist:
-	    header += '{0}{1}'.format(code,self._sep)
-	header += '\n'
-	return header
+	list =['Sample']+self._codelist
+	return self._write_line((['Sample']+self._codelist))
+#	header = 'Sample{0}'.format(self._sep)
+#	for code in self._codelist:
+#	    header += '{0}{1}'.format(code,self._sep)
+#	header += '\n'
+#	return header
 
     def line(self, sample):
-	line = '{0}{1}'.format(sample, self._sep)
+	info = [sample]
+#	line = '{0}{1}'.format(sample, self._sep)
 	for code in self._codelist:
 	    try:
 		data_point = self._dict[sample][code]
 	    except KeyError:
 		data_point = 'ND'
-	    line += '{0}{1}'.format(data_point, self._sep)
-	line += '\n'
-	return line
+	    info.append(data_point)
+	return self._write_line(info)
+#	    line += '{0}{1}'.format(data_point, self._sep)
+#	line += '\n'
+#	return line
 
 #---End of Class WriteData----------------------------------
 

@@ -280,7 +280,7 @@ class Path():
         runlist=[]
         with open(self.runlist_file, 'r') as runfile:
             for line in runfile:
-                sample = line.split(',')[0].lower()
+                sample = self._read_csv(line)[0].lower()
                 runlist.append(sample)
         return runlist
     

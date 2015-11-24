@@ -1,3 +1,5 @@
+import sys
+
 class CSV(object):
     def __init__(self, sep=','):
         self._sep = sep
@@ -36,5 +38,14 @@ class CSV(object):
 	        item_list.append(info_list[x][i])
 	    info_trans.append(item_list)
 	return info_trans
-		
+
+    def make_line(self, info):
+	line = None
+	for i in range(len(info)):
+	    info[i] = str(info[i])
+	    if self._sep in info[i] and not info[i][0]=='"':
+	        info[i] = join('"',str(info[i]),'"')
+        line = self._sep.join(info)
+	line +="\n"
+	return line
 

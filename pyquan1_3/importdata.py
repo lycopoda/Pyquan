@@ -42,6 +42,10 @@ def get_ID(line, project_name):
     ID['CF'] = ([float(runlist_local[1]),float(runlist_local[2])])
     return ID
 
+def replace_comma(n):
+    if "," in n:
+	n = n.replace(",",".")
+    return n
 
 def library_import(library_file, csv):
     '''import reference library and stores it as a dictionary'''
@@ -52,8 +56,8 @@ def library_import(library_file, csv):
 	    code, RT, lim, mass, name, source = csv.read_csv(line)[:6]
             code = correct_code(code)
             library[code]={}
-            library[code]['RT'] = float(RT)
-            library[code]['lim'] = float(lim)
+            library[code]['RT'] = float(replace_comma(RT))
+            library[code]['lim'] = float(replace_comma(lim))
             try:
 		mass = mass.split('+')
                 library[code]['mass'] = mass 
@@ -246,9 +250,10 @@ class CDF(object):
                        check mass list in library'.format(mass)
             try:
                 i = mass_slice.index(m)
+	    except ValueError:
+		i = None
+	    else:
                 intensity += intensity_slice[i] 
-            except ValueError:
-                pass
             return intensity
 
     def get_total_TIC(self):
