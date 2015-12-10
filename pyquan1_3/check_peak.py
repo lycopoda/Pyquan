@@ -80,8 +80,10 @@ def main():
 	if info.RT_check:
 	    ID.RT = float(info.RT_check)
         peak_fit = peak.Code(ID, sample_class, project)
-        peak_fit.area(noise=noise.NoiseReduction(info), fit_peak = info.fit_peak)
-	if ID.area:
+        status = peak_fit.area(noise=noise.NoiseReduction(info), fit_peak = info.fit_peak)
+	if status == 2:
+	    print 'data collection failed'
+	elif ID.area:
 	    print '\tRT={0}'.format(float(ID.RT)/60.) 
 	    update_datafile(project, ID)
 	else:

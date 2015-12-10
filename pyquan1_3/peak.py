@@ -119,7 +119,7 @@ class Code():
 	try:
 	    self.get_data()
 	except:
-	    return
+	    return 2
         self._y = noise.correct(self._x,self._y)
         params, x_fit, y_fit = pars.get_param(self._x, self._y, self._ID.RT)
 	if params:
@@ -135,7 +135,7 @@ class Code():
 	for i in range(1,4):
 	    param_str += '{0} '.format(param_fit['int'][i])
 	self._ID.param = param_str
-	return
+	return 0
 
     def real_area(self, pars):
 	self._x_real, self._y_real = pars.xy_int

@@ -56,6 +56,7 @@ class TIC_Sample(object):
 	self._total_TIC = None
 	self._baseline = None
 	self._time = None
+	self._sep = project.csv.sep
 
     def scan_time(self):
     	self._time = self._cdf.scan_time
@@ -63,7 +64,7 @@ class TIC_Sample(object):
 
 #create images
     def save_images(self):
-	if not self._time:
+	if self._time is None:
 	    self.baseline()
 	self.calc_peak_TIC()
         step = 10.
@@ -93,7 +94,7 @@ class TIC_Sample(object):
         with open(self._sample.datafile, 'r') as data_file:
 	    data_file.readline()
 	    for line in data_file:
-                info = line.strip().split(',')
+                info = line.strip().split(self._sep)
 		param = info[4].split(" ")[:4]
 		cf = self._library.code_cf(info[0])
 		if param[1] != 'None':
@@ -249,14 +250,14 @@ class Write_data(object):
 
     def norm_factor(self, sample, local_dict, method=None):
 	tic = TIC_Sample(sample, self._project, self._lib)
-        if method == 'sum':
+        if method.upper() == 'SUM':
 	    norm = 0.
 	    for code in local_dict:
 		try:
 		    norm += float(local_dict[code])
 		except:
 		    pass
-	elif method == 'TIC':
+	elif method.upper() == 'TIC':
 	    #calculate total TIC minus baseline
 	    norm = tic.norm_TIC
         elif method:
