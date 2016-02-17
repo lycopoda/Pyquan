@@ -1,0 +1,58 @@
+[Project]
+
+project_name =	
+#name of project (no spaces allowed)
+
+#-------------------------------------------------------------------------------
+[CSV]
+separator: ,
+#Give the character that separates the CSV file (default ,).
+
+#-------------------------------------------------------------------------------
+
+
+#---------------------------------------------------------------------------------------
+[Peak_information]
+
+sample_name:	all
+#same as in sample list, should be the same as CDF files, but without .CDF.
+#Or 'all', to apply parameters to code in all samples.
+
+code: 		
+#compound code type as in the libraries.
+
+peak_RT:	
+#if value, it uses this RT (in min) to identify peak (default=None)
+
+area_extern: 			 
+#Peak area obtained external.If value, quantification will be skipped (default=None)
+
+
+#---------------------------------------------------------------------------------------
+[Smoothing]
+method:		savgol
+#None, mov_av (moving average, based on Hanning filter), savgol (default=savgol)
+
+order:		0
+#The order of polynomal fit through data (only for savgol), (default=0 =  only smoothing).
+#Should be an integer, less then (window-1).
+
+window_len: 	7		 
+#Length of the filter window, should be an odd number (default=7). 
+
+window_type:	hanning
+#only if mov_av selected. Possibilities: flat, hanning (=default), hamming, bartlett, blackman.
+
+#---------------------------------------------------------------------------------------
+[Peak_fit]
+fit_peak:	yes
+#if no, peak area will be estimated from data, otherwise a curve will be fitted.
+
+min_peak_dist:	7
+#in time steps (default=7)
+
+max_valley:	0.3
+#threshold of value, fraction of peak height (default=0.3)
+
+peak_window:	120
+#time range around peak (default=120)	
