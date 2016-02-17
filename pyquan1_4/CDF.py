@@ -21,7 +21,7 @@ class CDF(object):
         return False
 
     def import_data(self):
-        self._scan_index = self._CDF.variables['scan_index']
+        self._scan_index = self._CDF.variables['scan_index'][:]
         self._mass_values = np.rint(np.array(self._CDF.variables\
                                     ['mass_values'])).astype(int).tolist()
         self._intensity_values = np.array(self._CDF.variables\
