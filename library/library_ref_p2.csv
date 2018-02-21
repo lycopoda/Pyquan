@@ -1,0 +1,268 @@
+Code,RT,Limit,Mass,Name,Source
+4a,0.16584625,0.1,72,"1-Propene, 2-methoxy",PS
+12a,0.21768,0.1,57+71,n-C5:0,ALK
+11,0.242276439,0.1,68,Furan,PS
+13,0.259661827,0.1,53,2-Propenenitrile?,N
+19,0.26075584,0.1,66,"1,3-Cyclopentadiene",PS
+610,0.26075584,0.1,72,"Propanal, 2-methyl",PS
+16a,0.27174375,0.1,86,Acetic acid ethenyl ester,PS
+20,0.289504101,0.1,54,Propanenitrile,N
+28,0.4,0.1,82,2-Methylfuran,PS
+30,0.41,0.1,60,Acetic acid,PS
+29b,0.32797,0.1,57+71,n-C6:0,ALK
+32,0.32797,0.1,68,"Propanenitrile, 2-methyl-",N
+81,0.6,0.1,53,"Furan, 3-methyl",PS
+33,0.331410869,0.1,88,Methylpropnionate,PS
+34,0.345249471,0.1,79,"1,3-Cyclopentadiene, 1-methyl- + 1,3-Cyclohexadiene",PS
+35,0.36037612,0.1,70,2-Butenal (E),PS
+624,0.365410216,0.1,57,"Butanal, 2-methyl-",PS
+36,0.367404627,0.1,78,Benzene,AR
+37,0.44,0.1,74,"2-Propanone, 1-hydroxy-",PS
+41,0.40670579,0.1,57,"2,3-Pentanedione",PS
+44,0.418632063,0.1,81,"Furan, 2-ethyl-",PS
+48,0.487,0.02,96,"Furan, 2,5-dimethyl-",PS
+52,0.435630618,0.1,74,Propanoic acid,FA
+49,0.441739078,0.1,96,"Furan, 2,4-dimethyl-",PS
+55b,0.449463713,0.1,55,"Butanenitrile, 2-methyl-",N
+54,0.451553466,0.1,72,2-propenoic acid,FA
+27,0.451553466,0.1,74,N-Nitrosodimethylamine,N
+54b,0.45894711,0.1,94,Vinylfuran,PS
+50,0.47133208,0.1,55+69,n-C7:1,ALK
+58,0.47381837,0.1,80,"Pyrrole, 1-methyl",N
+55,0.475062673,0.1,43,"Butane-nitrile, 3-methyl",N
+57,0.48379437,0.1,57+71,n-C7:0,ALK
+625,0.48592061,0.1,77," 1,4-Cyclohexadiene, 1-methyl-",PS
+55a,0.487548054,0.1,80,Pyrazine,N
+59,0.534,0.02,79,Pyridine,N
+60,0.50894875,0.1,67,Pyrrole,N
+575,0.50894875,0.1,94,"Pyrroline, 1,2-dimethyl-",N
+63,0.571,0.02,91,Toluene,AR
+67,0.580978121,0.1,102,"Propanoic acid, 2-oxo-, methyl ester",PS
+10a,0.58621141,0.1,68,Pyrazole,N
+69,0.590143987,0.1,55,Cyclopentanone,PS
+70,0.600662632,0.1,95,"Furan, 2-ethyl-5-methyl-",PS
+79,0.573,0.1,59,Acetamide,N
+77,0.63382858,0.1,110,"Furan, 2,3,5-trimethyl-",PS
+40a,0.63917625,0.1,83,"2,3,4,5-Tetrahydropyridine",N
+78,0.644,0.02,95,3-Furaldehyde,PS
+80,0.65,0.02,93,"Pyridine, 2-methyl-",N
+75,0.65259456,0.1,55+69,n-C8:1,ALK
+17,0.65259456,0.1,74,"Acetic acid, methyl ester",PS
+76,0.66608263,0.1,57+71,n-C8:0,ALK
+85,0.672852656,0.1,98,"2,5-Furandione",PS
+86,0.679,0.02,82,2-Cyclopenten-1-one,PS
+87,0.678,0.02,96,Furfural,PS
+89,0.688,0.01,80,"1H-Pyrrole, 2-methyl-",N
+90,0.703,0.01,80,"1H-Pyrrole, 3-methyl-",N
+91,0.72072171,0.1,108,"Furan, 2-(2-propenyl)-",PS
+92,0.719,0.02,97,2-Furanmethanol,PS
+96,0.744270231,0.1,91,Ethylbenzene,AR
+139,0.749838937,0.1,94,"1H-Pyrrole, 2,3-dimethyl",N
+82,0.742,0.02,93,"Pyridine, 3-methyl-",N
+26,0.743,0.02,86,"2-Propanone, 1-(acetyloxy)-",PS
+94,0.752627248,0.1,110,2-propylfuran,PS
+98,0.749,0.02,55,"2(3H)-Furanone, 5-methyl-",PS
+108,0.76240704,0.1,91,"1,4-Dimethylbenzene",AR
+100,0.766608206,0.1,91,"1,2/3-Dimethylbenzene",AR
+95,0.769412249,0.02,93,"Pyridine, 4-methyl",N
+104,0.79052536,0.1,96,"2-Cyclopentene-1,4-dione",PS
+104a,0.78,0.02,96,"cis-2-Cyclopentene-1,4-dione",
+104b,0.787,0.02,96,"trans-2-Cyclopentene-1,4-dione",PS
+634,0.796463059,0.1,84,Lysidine,N
+111,0.797595334,0.1,55+69,n-C9:1,ALK
+106,0.797595334,0.1,107,"Pyridine, 2,6-dimethyl-",N
+109a,0.80468133,0.1,91,"1,2-Dimethylbenzene",AR
+109,0.81,0.02,104,Styrene,AR
+112,0.826034779,2,57+71,n-C09:0,ALK
+136a,0.84753,0.1,106,"Pyridine, 2-ethyl",N
+138,0.84753,0.1,67,"2,3-Dimethylpyrazine",N
+113,0.848968011,0.1,67,"2-Cyclopenten-1-one, 2-methyl-",PS
+114,0.845,0.1,95,"Ethanone, 1-(2-furanyl)-",PS
+626,0.855,0.1,109,4-methyl-2-furfural,PS
+74,0.841,0.1,84,(5H)-Furane-2-one,PS
+117,0.872060337,0.1,108,"Benzene, methoxy-",AR
+635,0.883665469,0.1,95,"1H-pyrrole, 2,5-dimethyl",N
+119a,0.884,0.1,80,"1H-Pyrrole, 2-ethyl-",N
+140,0.886572848,0.1,94,"1H-Pyrrole, 2,4-dimethyl-",N
+121,0.879,0.02,98,"1,2-Cyclopentanedione ",PS
+627,0.90552984,0.1,105,"Benzene, (1-methylethyl)-",AR
+614,0.897,0.02,107,"Pyridine, 2,5-dimethyl",N
+129,0.92,0.1,80,"1H-Pyrrole, 3-ethyl-",N
+125,0.929000691,0.1,98,"2(5H)-Furanone, 5-methyl-",PS
+133,0.94522491,0.1,68,"2,5-Furandione, 3-methyl-",PS
+167,0.96449032,0.1,76,Benzonitrile,N
+143,0.968950118,0.1,91,propylbenzene,AR
+136,0.97937649,0.1,79,2-Pyridinecarboxaldehyde,N
+143a,0.97937649,0.1,98,"2-Cyclopenten-1-one, 2-hydroxy-",PS
+628,0.980408117,0.1,105,"Benzene, 1-ethyl-3-methyl-",AR
+145,0.97,0.02,110,"2-Furancarboxaldehyde, 5-methyl-",PS
+629,0.990190441,0.1,105,"Benzene, 1-ethyl-4-methyl-",AR
+148,0.997315535,0.1,96,"2-Cyclopenten-1-one, 3-methyl-",PS
+184,1.001663088,0.1,105,"Benzene, 1,3,5-trimethyl-",AR
+612,1.025027138,0.1,105,"Benzene, 1-ethyl, 2-methyl-",AR
+166,1,0.02,94,Phenol,AR
+159,1.044033642,0.1,108,"1,2,5-trimethylpyrrole",N
+195,1.047066041,0.1,55+69,n-C10:1,ALK
+590,1.065362689,0.1,105,"Benzene, 1,2,4-trimethyl",AR
+196,1.06987875,0.1,57+71,n-C10:0,ALK
+176,1.06987875,0.1,89,Benzofuran,AR
+181,1.111247148,0.1,108,"2,3,5-trimethylpyrrole",N
+187,1.11586752,0.1,122,2-methoxytoluene,AR
+180,1.104,0.02,95,1H-Pyrrole-2-carboxaldehyde,N
+190,1.128,0.02,122,4-methoxytoluene,AR
+147,1.135355805,5,105,"Benzene, 1,2,3-trimethyl-",AR
+185,1.149893627,5,112,3-hydroxy-2-methyl-2-cyclopenten-1-one,PS
+188,1.149893627,5,83,2-hydroxy-3-methyl-2-cyclopenten-1-one,PS
+191,1.16232861,5,122,3-methoxytoluene,AR
+197,1.17791808,5,67,"2-Cyclopenten-1-one, 2,3-dimethyl-",PS
+201,1.17791808,5,113,Dianhydrorhamnose,PS
+202,1.17791808,5,124,5-ethyl-2-furfural,PS
+611,1.202965673,5,91,Benzeneacetaldehyde,AR
+630,1.206262616,5,134,"Benzene, (1-methylpropyl)-",AR
+200,1.207676258,5,115,Indene,AR
+203,1.218684852,5,107,"Phenol, 2-methyl-",AR
+631,1.220101985,5,134,"Benzene, 1-methyl-3-propyl-",AR
+211,1.22498625,5,105,Acetophenone,AR
+227,1.22498625,5,90,4-Methyl benzonitrile,N
+220,1.23129544,5,128,"2,5-Dimethyl-4-hydroxy-3(2H)-furanone",PS
+250b,1.239192833,5,119,4-Hydroxybenzonitrile,N
+632,1.244728184,5,134,"Benzene, 1-methyl-4-propyl-",AR
+633,1.266451495,5,134,"Benzene, 1-methyl-2-propyl-",AR
+217,1.27249272,5,107,"Phenol, 4-methyl-",LG
+178a,1.27249272,5,134,"2-Ethyl-4,6-dimethylpyridine",N
+228,1.301200921,2,55+69,n-C11:1,ALK
+224,1.3044,5,109,Guaiacol,LG
+236,1.32202771,2,57+71,n-C11:0,ALK
+213,1.326844833,5,116,"Benzonitrile, 3-methyl",N
+241,1.328451446,5,117,phenylacetonitrile,N
+095a,1.33649128,5,94,3-Pyridinamine,N
+229,1.362293881,5,107,"Phenol, 2,6-dimethyl-",AR
+235,1.36876224,5,131,"Benzofuran, 2-methyl",PS
+225,1.373618114,5,68,Levoglucosenone,PS
+230,1.373618114,5,126,3-hydroxy-2-methyl-(4H)-pyran-4-one (maltol),PS
+307a,1.389832671,5,133,"Benzoxazole, 2-methyl",N
+246,1.427288972,5,107,"Phenol, 2-ethyl",AR
+244,1.4354612,5,102,"2-Propanamine, N-methyl-N-nitroso-",N
+250a,1.445281605,5,117,1-isocyano-4-methylbenzene,N
+251,1.458398586,5,107,"Phenol, 2,4-dimethyl- + Phenol, 2,5-dimethyl",AR
+252,1.458398586,5,144,"4H-Pyran-4-one, 2,3-dihydro-3,5-dihydroxy-6-methyl-",PS
+095b,1.49955648,5,94,4-Pyridinamine,N
+185,1.49955648,5,112,3-hydroxy-2-methyl-2-cyclopenten-1-one,PS
+260,1.502859894,5,107,"Phenol, 4-ethyl-",LG
+269a,1.507817969,5,73,n-C08:0 FA,FA
+258,1.511125316,5,105,Benzoic acid,AR
+622,1.51608927,5,107,"3,5-dimethylphenol",AR
+262,1.517744702,5,100,"Pyrrolidine, 1-nitroso-",N
+621,1.54927125,5,107,"3,4-dimethylphenol",AR
+286,1.554261728,2,55+69,n-C12:1,ALK
+272,1.56092098,5,142,"4H-Pyran-4-one, 3,5-dihydroxy-2-methyl-",PS
+280,1.562586732,5,123,4-methylguaiacol,LG
+287,1.574257459,2,57+71,n-C12:0,ALK
+284,1.58594636,5,110,"1,2-Benzenediol (Catechol)",LG
+294,1.63288,5,69,"1,4:3,6-Dianhydro-à-d-glucopyranose",PS
+293,1.636243103,5,120,"Phenol, 4-vinyl-",LG
+351,1.64970951,2,124,"1,4-Benzenediol, 3-methyl",LG
+297,1.659823887,5,83,3-Acetamidofuran,N
+301,1.659823887,5,126,"2-Furancarboxaldehyde, 5-(hydroxymethyl)-",PS
+307,1.70040384,5,91,Benzenepropanenitrile,N
+316,1.713973151,5,129,Quinoline,N
+312,1.73436616,2,124,"1,2-Benzenediol,3-methyl-",AR
+313,1.742876884,5,140,3-methoxycatechol,LG
+324,1.76845632,5,137,4-Ethylguaiacol,LG
+332,1.78554799,5,142,2-Methyl naphthalene,AR
+319,1.792393183,5,110,"Isoquinoline, 1,2,3,4-tetrahydro-",N
+333,1.797530243,2,55+69,n-C13:1,ALK
+328,1.806097995,5,104,"1H-Inden-1-one, 2,3-dihydro-",AR
+336,1.81467317,2,57+71,n-C13:0,ALK
+330,1.833564351,5,117,Indole,N
+338,1.847325342,5,142,"Naphthalene,1-methyl",AR
+334,1.861104507,5,150,4-Vinylguaiacol,LG
+340,1.868000818,5,87,"1,4-Dideoxy-D-glycero-hex-1-enopyranose-3-ulose",PS
+358,1.90600896,5,121,"Benzaldehyde, 4-hydroxy",AR
+350,1.944145653,5,154,Syringol,LG
+327,1.949355754,5,124,"1,2-Benzenediol, 4-methyl-",LG
+354,1.954568124,5,164,Eugenol,LG
+357,1.977180922,5,137,4-propylguaiacol,LG
+583,1.99286011,5,196,"Phenol, 2,4,6-trichloro",FUN
+375,2.033016024,2,55+69,n-C14:1,ALK
+369,2.04526144,5,123,"1,2-Benzenediol, 4-ethyl",LG
+376,2.052263725,2,57+71,n-C14:0,ALK
+370,2.054014849,5,130,"1-Indole, 3-methyl",N
+386,2.06277375,5,60,Levogalactosan,PS
+371,2.073291587,5,151,Vanillin,LG
+381,2.073291587,5,164,cis-isoeugenol,LG
+401,2.11543872,5,121,Methylparaben,AR
+335,2.13303459,5,95,4-hydroxybenzylalcohol,AR
+390,2.170048875,5,168,4-methylsyringol,LG
+392,2.177108571,5,164,trans-isoeugenol,LG
+576,2.22129624,5,177,"2,5-Cyclohexadiene-1,4-dione, 2,6-bis(1,1-dimethylethyl)-",AR
+404,2.22129624,5,60,Levomannosan,PS
+396,2.262042051,2,55+69,n-C15:1,ALK
+398,2.263815527,5,151,4-Acetylguaiacol,LG
+397,2.278008888,2,57+71,n-C15:0,ALK
+406,2.324202673,5,151,"Vanillic acid, methyl ester",LG
+407,2.340214901,5,167,4-ethylsyringo,LG
+416,2.340214901,5,144,1-Naphthol,AR
+584,2.34555471,5,250,"Benzene, pentachloro",FUN
+408,2.347334908,5,180,Guaiacylacetone,LG
+420,2.350895694,5,60,Levoglucosan (glucose),PS
+409,2.365143955,5,168,Dibenzofuran,AR
+417a,2.413289119,5,73,n-C12:0 Fatty Acid,FA
+423,2.43471336,5,180,4-Vinylsyringol,LG
+422,2.438285542,5,168,Vanillic Acid,LG
+410,2.45257833,5,121,4-Hydroxybenzoic acid,AR
+427,2.474029209,5,151,lijkt op acetylguaiacol,LG
+442,2.475817391,2,55+69,n-C16:1,ALK
+443,2.48475966,2,57+71,n-C16:0,ALK
+429,2.500861271,5,194,"Syringol, 4-(prop-1-enyl)-",LG
+432,2.509809563,5,166,Fluorene,PS
+447,2.55995547,5,73,"1,6-Anhydro-à-d-galactofuranose",PS
+430,2.57787784,5,167,4-propylsyringol,LG
+441,2.590427125,5,126,Thymine,N
+433,2.610152964,5,194,cis-propenylsyringol,LG
+577,2.64962232,5,71,"Octane, 1,1'-oxybis-",ALK
+449,2.64962232,5,129,n-C13 Fatty Acid,FA
+459,2.680134528,2,55+69,n-C17:1,ALK
+469,2.68552,5,284,"Benzene, hexachloro-",FUN
+460,2.70347331,2,57+71,n-C17:0,ALK
+558,2.72142888,5,97,Tetradecanenitrile,N
+457,2.723224541,5,194,trans-Propenylsyringol,LG
+450,2.751957007,5,186,Diketodipyrrole,N
+453,2.798650662,5,137,Coniferol,LG
+470,2.821996556,5,73,C14:0 fatty acid,FA
+578,2.86509,5,219,"3,5-di-tert-Butyl-4-hydroxybenzaldehyde",AR
+473,2.881246581,2,55+69,nC18:1,ALK
+467,2.88304161,5,167,4-(propan-2-one)syringol,LG
+474,2.89919539,2,57+71,nC18:0,ALK
+580,2.93687544,5,102,Isopropyl Myristate,ALK
+483,3.00858472,5,208,Ferulic acid methyl ester,AR
+492,3.073029391,4,55+69,n-C19:1,ALK
+490,3.08018328,5,129,C15 Fatty acid,FA
+493,3.096274165,4,57+71,n-C19:0,ALK
+544a,3.13378875,5,205,"7,9-Di-tert-butyl-1-oxaspiro(4,5)deca-6,9-diene-2,8-dione",AR
+623,3.15163656,5,73,n-C16:1 Fatty Acid,FA
+581,3.165906741,5,149,Dibutyl phthalate,AR
+496,3.194424417,5,129,C16 Fatty acid,FA
+499,3.249584121,4,55+69,n-C20:1,ALK
+500,3.263797362,4,57+71,n-C20:0,ALK
+501,3.34710183,5,73,C17 Fatty acid,FA
+496a,3.41770251,4,71+123,Phytol,ALK
+503,3.41770251,4,57+71,n-C21:0,ALK
+504,3.495004524,5,55,C18:1 fatty acid,FA
+505,3.526509512,5,73,C18 fatty acid,FA
+507,3.573628179,4,55+69,n-C22:1,ALK
+508,3.580594009,4,57+71,nC22:0,ALK
+511,3.727641244,4,55+69,n-C23:1,ALK
+512,3.73107729,4,57+71,n-C23:0,ALK
+517,3.870904776,4,57+71,n-C24:0,ALK
+520,3.96846507,4,55+69,n-C25:1,ALK
+521,4.00182625,4,57+71,n-C25:0,ALK
+525,4.16628375,4,57+71,n-C26:0,ALK
+528,4.32643125,4,57+71,n-C27:0,ALK
+532,4.48172875,4,57+71,n-C28:0,ALK
+537,4.63163625,4,57+71,n-C29:0,ALK
+541,4.77561375,4,57+71,n-C30:0,ALK
+544,4.91312125,4,57+71,n-C31:0,ALK
+550,5.04361875,4,57+71,n-C32:0,ALK
+552,5.16656625,4,57+71,n-C33:0,ALK
+557,5.28142375,4,57+71,n-C35:0,ALK
