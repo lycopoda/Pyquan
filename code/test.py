@@ -1,6 +1,38 @@
-import CDF
+import CDF, warnings
 import timeit, sys
 import numpy as np
+from scipy.optimize import OptimizeWarning
+from matplotlib import pyplot as plt
+
+class Image(object):
+    def __init__(self):
+        plt.figure()
+
+    def __enter__(self):
+        return
+
+    def __exit__(self, type, value, traceback):
+        plt.close()
+        return
+
+    def plot(self, x, y):
+        plt.plot(x,y)
+        plt.savefig('figure.png')
+        return
+
+def save_image():
+    x= [1.]
+    y=[1.]
+    image = Image()
+    with image:
+        for i in range(100):
+            image.plot(x,y)
+#    for i in range(100):
+#        plt.figure()
+#        plt.plot(x,y)
+#        plt.savefig('figure.png')
+#        plt.close()
+    return
 
 def create_cdf_class():
     sample = 'P2013157'
@@ -42,11 +74,16 @@ def run_pyquan():
 
 def run_quantify():
     import quantify
-    quantify.main('francois')
+    quantify.main('brabant')
 
 def run_normalize():
     import normalize
     normalize.main('francois')
+    return
+
+def run_calibrate():
+    import calibrate
+    calibrate.main('brabant')
     return
 
 def total_mass():
@@ -60,9 +97,15 @@ def total_mass():
     print(index)
     return            
 
-
+def array():
+    import numpy as np
+    x=list(range(1000))
+    x=np.array(x)
+    x=x/60.
+    return
 
 def main():
+    warnings.simplefilter('error', OptimizeWarning)
 #    time_process(create_cdf_class)
 #    time_process(importdata)
 #    time_process(time_index)
@@ -72,6 +115,8 @@ def main():
 #    time_process(total_mass)
     time_process(run_quantify)
 #    time_process(run_pyquan)
+#    time_process(run_calibrate)
+#    time_process(save_image)
     return
 
 if __name__=='__main__':

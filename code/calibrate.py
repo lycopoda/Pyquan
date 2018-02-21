@@ -35,6 +35,9 @@ class Align(object):
         self._slope = project.info.slope
         self._lim = project.info.lim
         self._ref = project.info.sample_ref-1
+        ref_name = self._project.runlist[self._ref]
+        self._image = SaveImage(self._project.path.align_dir,
+                sample_y = ref_name) 
 
     def align(self):
         CF = {}
@@ -44,13 +47,11 @@ class Align(object):
             if not sample == self._ref_name:
                 print('\t{0} vs {1}\t\t\r'.format(self._ref_name, sample),)
                 CF[sample] = self.align_sample(sample)
-        print('Align against reference library           ')
+        print('Align against reference library')
         CF = self.align_ref(CF)
         return CF
 
     def align_sample(self, sample):
-        image = SaveImage(self._project.path.align_dir,
-                          sample_y=self._project.runlist[self._ref])
         x=[]
         y=[]
         for code in self._RT[self._ref_name]:
@@ -58,7 +59,7 @@ class Align(object):
                 x.append(self._RT[sample][code][0])
                 y.append(self._RT[self._ref_name][code][0])
         CF = stat.reg_robust(x,y,slope=self._slope, lim=self._lim)
-        image.save_image(x,y,CF,sample_x=sample)
+        self._image.save_image(x,y,CF,sample_x=sample)
         return CF
 
     def align_ref(self, CF_RT):
@@ -77,8 +78,7 @@ class Align(object):
                 x.append(stat.median(RT_ref[code]))
                 y.append(self._library.library[code]['RT'])
         CF_ref = stat.reg_robust(x,y,slope=self._slope, lim=self._lim)
-        image = SaveImage(self._project.path.align_dir, sample_y='RT_ref') 
-        image.save_image(x,y,CF_ref,sample_x='Reference')
+        self._image.save_image(x,y,CF_ref,sample_x='Reference')
         CF_new = {}
         for sample in self._project.runlist:
             CF_new[sample] = (CF_RT[sample][0]*CF_ref[0], 
@@ -124,8 +124,8 @@ class Calibrate(object):
             for line in lines:
                 info = self._csv.read_line(line)
                 CF = self._CF[info[0].lower()]
-                CF_list = [CF[0],CF[1]]
-                callist.write(self._csv.make_line(info + [CF[0],CF[1]]))
+                line_list = info + [CF[0] , CF[1]]
+                callist.write(self._csv.make_line(line_list))
         return
 
     def datadict(self):
@@ -252,7 +252,7 @@ def get_code_set(RT_dict):
 def move_amdis(path):
     amdis_file = path.amdis_file
     if amdis_file:
-        imp.amdis_batch(path)
+        amdis.batch(path)
         os.unlink(path.amdis_file)
     return
 
@@ -270,6 +270,7 @@ def main(project_name = None):
         import analyse
         project_name = analyse.get_project_name()
     project = proj.Project(project_name)
+    project.prepare_calibrate()
     warnings.simplefilter("error", FutureWarning)
     Calibrate(project).calibrate()
     print('\a')

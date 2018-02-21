@@ -49,12 +49,12 @@ def correct_code(code):
             break
     return code
 
-def read_intensity(project):
+def read_intensity(amdis_path, info):
     """Reads AMDIS library, and returns a dictionary with for each
     compound the intensity per mass.
     """
     intensity = {}
-    with open(project.path.library_amdis, 'r', encoding='latin-1') as amdis:
+    with open(amdis_path, 'r', encoding='latin-1') as amdis:
         for line in amdis:
             code, compound = get_compound(line)
             if code:
@@ -62,7 +62,7 @@ def read_intensity(project):
                     intensity[amdis_code._code]=amdis_code.intensity 
                 except:
                     pass
-                amdis_code = AmdisCode(project, code)
+                amdis_code = AmdisCode(info, code)
             elif line[0]=='(':
                 amdis_code.read_line(line)
         if amdis_code:
@@ -86,16 +86,22 @@ def batch(path):
     """Separates an AMDIS batch file into a file for each sample.
     These samples are stored in an amdis folder, with the project  folder."""
     data_dict =  {}
-    comp = AmdisCompile()
+    comp = Compile()
     with open(path.amdis_file, 'r') as data:
         header = data.readline()
         sample_dict = {}
-    for line in data:
-            sample = read_line_batch(line, comp).lower()
-            if not sample in sample_dict:
-                sample_dict[sample] = []
-            sample_dict[sample].append(line)
-    return sample_dict, header
+        for line in data:
+                sample = read_line_batch(line, comp).lower()
+                if not sample in sample_dict:
+                    sample_dict[sample] = []
+                sample_dict[sample].append(line)
+    for sample in sample_dict:
+        fp = path.amdis_file_sample(sample)
+        with open(fp, 'w') as sf:
+            sf.write(header)
+            for line in sample_dict[sample]:
+                sf.write(line)
+    return
             
 def read_line_batch(line, comp):
     info = line.split("\t")
@@ -122,7 +128,7 @@ class Sample(object):
                 if not cal:
                     check = self.check_time(code, RT)
                 if check:
-                    self.add_ID(code, RT, fit)
+                    self.add_ID(code, float(RT), int(fit))
         return self._data
 
     def add_ID(self, code, RT, fit):
@@ -162,10 +168,10 @@ class AmdisCode(object):
     for each m/z.
     """
 
-    def __init__(self, project, code):
+    def __init__(self, info, code):
         self._code = code
         self._intensity = {}
-        self._mzlim = project.info.mass_limits
+        self._mzlim = info.mass_limits
         self._comp = Compile()
         
 

@@ -1,11 +1,17 @@
 import numpy as np
 import sys
+import noise_reduction as noise
 
 def baseline_poly(x,y, window=100, deg=3):
     '''fit polynomal function through minimum values in each window.
     window=number of windows (default = 100)
     deg=order of polynomal function (default=3)
     '''
+    #issue: zero artefacts cause trouble in setting base line.
+    #solution: ignore individual zero's
+    #did not solve, also low values causing problems
+    #solution: noise reduction for y values
+    y = noise.savgol(y, 5)
     try:
         window = int(window)
     except:

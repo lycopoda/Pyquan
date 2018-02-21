@@ -81,10 +81,6 @@ class RobustRegression(object):
         return
         
     def get_line_list(self, item):
-        rc=item[2]
-        ic=item[1]
-        return np.where(abs(self._x*rc+ic-self._y) < self._min)[0]
-
         rc = item[2]
         ic = item[3]
         idx_list = []

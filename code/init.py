@@ -310,6 +310,7 @@ class Path():
     def runlist_cal(self):
         import runlist
         run = runlist.Project(self._project)
+    #test
         try:
             run_list = run.read_runlist()
         except:
@@ -331,6 +332,11 @@ class Path():
 
     def datafile(self, sample):
         return os.path.join(self.data_dir, '{0}_data.csv'.format(sample))
+
+    @property
+    def hdf5(self):
+        return os.path.join(self._project_dir, 'data',
+                            '{0}.h5'.format(self._project))
 
     @property
     def RT_file(self):

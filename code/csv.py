@@ -42,7 +42,7 @@ class CSV(object):
     def make_line(self, info):
         line = None
         for i in range(len(info)):
-            info[i] = str(info[i])
+            info[i] = str(info[i]).replace('\n', '')
             if self._sep in info[i] and not info[i][0]=='"':
                 info[i] = "".join(['"',str(info[i]),'"'])
         line = self._sep.join(info)

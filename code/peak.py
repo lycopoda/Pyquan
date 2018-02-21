@@ -18,9 +18,8 @@ class Peak_ID(object):
         self._ID['sample'] = sample
         self._ID['code'] = code
         self._ID['mass'] = mass
-        self._ID['real_area'] = None
-        self._ID['real_x'] = None
-        self._ID['real_y'] = None
+        self._ID['x'] = None
+        self._ID['y'] = None
 
     def __enter__(self):
         return self
@@ -85,6 +84,24 @@ class Peak_ID(object):
         return
 
     @property
+    def x(self):
+        return self._ID['x']
+
+    @x.setter
+    def x(self, x):
+        self._ID['x'] = x
+        return
+
+    @property
+    def y(self):
+        return self._ID['y']
+
+    @y.setter
+    def y(self, y):
+        self._ID['y'] = y
+        return
+
+    @property
     def area(self):
         return self._ID['area']
 
@@ -105,7 +122,6 @@ class Code():
         '''fit peak, and store data in ID class'''
         pars = peak_pars.Pars(self._project.info)
         param_fit = {}
-        param_fit['int'] = [None,None,None,None]
         time = []
         intensity = []
         self.get_data()
@@ -122,12 +138,12 @@ class Code():
                 self._ID.RT = param_fit['int'][1]
             if fit_peak != 'yes':
                 self.real_area(pars)
-                param_fit['int'] = [None,None,None,None]
             self.save_image(param_fit, fit_peak=fit_peak)
         param_str = '{0} '.format(param_fit['int'][0])
         for i in range(1,4):
             param_str += '{0} '.format(param_fit['int'][i])
-        self._ID.param = param_str
+        if param_fit:
+            self._ID.param = param_fit
         return
 
     def real_area(self, pars):
@@ -135,12 +151,7 @@ class Code():
         self._ID.area = np.trapz(self._y_real, self._x_real)
         start = self._cdf.time_index(self._x_real[0])
         end = self._cdf.time_index(self._x_real[-1])
-        index = [start,end]
-        real_x = ''
-        real_y = ''
-        for i in range(len(self._y_real)):
-            real_y += '{0} '.format(self._y_real[i])
-        self._ID.real_peak = (index, real_y)
+        self._ID.real_peak = (self._y_real, (start, end))
         return
     
     def get_data(self):
@@ -168,11 +179,14 @@ class Code():
         end = int_idx + lim
         if end > time_len:
             end = time_len
-        self._x = x[start:end]
-        self._y = y[start:end]
+        self._ID.x = x[start:end]
+        self._ID.y = y[start:end]
+        self._x = self._ID.x
+        self._y = self._ID.y
         return
-        
+
     def save_image(self, pars, fit_peak = 'yes'):
+#        return
         import matplotlib.pyplot as plt
         x = np.array(self._x)
         x_plot = x/60. #back to minutes

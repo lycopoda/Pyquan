@@ -16,7 +16,7 @@ class CF(object):
             print('{0} not in AMDIS library'.format(code))
             sys.exit(2)
         TIC_mz = 0.
-        for mz in self._project._library._lib[code]['mz']:
+        for mz in self._project.lib._lib[code]['mz']:
             try:
                 TIC_mz += self._amdisdict[code][mz]
             except KeyError:

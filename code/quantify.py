@@ -42,8 +42,12 @@ class Sample(object):
 def get_ID(project, sample, code, mass):
     sample_info = project._RTdict[sample][code]
     ID = peak.Peak_ID(sample, project, code, mass)
-    ID.RT = sample_info[0]
-    ID.fit = sample_info[1]
+    try:
+        ID.RT = sample_info[0]
+        ID.fit = sample_info[1]
+    except TypeError:
+        ID.RT = None
+        ID.fit = None
     return ID
 
 def quantify(project):
@@ -52,35 +56,34 @@ def quantify(project):
     project.get_CFdict()
     project.get_RTdict()
     datalines = []
+    ID = {}
     for sample in project.runlist:
         line = 'Quantify peaks in {0}: '.format(sample)
-        print(line, end='', flush=True)
-        with CDF.CDF(sample) as cdf,\
-             datafiles.DataFiles(project, sample) as datafile:
+        print(line, end=' ', flush=True)
+        with CDF.CDF(sample) as cdf:
             cdf.import_data()
-            if not project._check_peak:
-                datafile.make_file()
             for code in project._RTdict[sample]:
                 print('\r{0}{1}   \t\t'.format(line, code), end='', flush=True)
                 sys.stdout.flush()
-                quantify_code(project, sample, code, cdf, datafile)
+                ID[code] = quantify_code(project, sample, code, cdf)
+            with datafiles.HDF5(project.path.hdf5) as HDF5:
+                    HDF5.save(sample, ID)
             print('\r{0}finished   \t\t'.format(line), flush=True)
     return 
 
-def quantify_code(project, sample, code, cdf, datafile):
-    with get_ID(project, sample, code, project._library.mz(code)) as ID:
+def quantify_code(project, sample, code, cdf):
+    with get_ID(project, sample, code, project._lib.mz(code)) as ID:
         peak_fit = peak.Code(ID, cdf, project)
         peak_fit.area(noise=project.noise, fit_peak=project.fit_peak)
-        if project._check_peak:
-            datafile.update_file(ID)
-        else:
-            datafile.write_data(ID)
-    return
+    return ID.ID
 
 
 def main(project_name):
     warnings.simplefilter("error", OptimizeWarning)
-    quantify(project.Project(project_name))
+    proj = project.Project(project_name)
+    proj.prepare_quantify()
+    datafiles.create_file(proj)
+    quantify(proj)
     return 0
 
 if __name__=='__main__':

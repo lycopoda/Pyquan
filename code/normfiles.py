@@ -14,7 +14,7 @@ class NormFiles(object):
              open(self._project.path.data_norm_file, 'w') as data:
                  norm.write(self.header_areanorm())
                  data.write(self.header_data())
-                 for code in self._project._library._lib:
+                 for code in self._project.lib.library:
                      norm.write(self.line_areanorm(code))
                      data.write(self.line_data(code))
         return

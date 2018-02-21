@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 class Fit(object):
     '''Deconvolute peaks, and quantify peak of interest'''
